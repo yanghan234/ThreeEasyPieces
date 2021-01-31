@@ -48,4 +48,5 @@ void *task(void *arg)
         printf("(%d) Eating\n",*me);
         put_forks(*me);
     }
+    return NULL;
 }
