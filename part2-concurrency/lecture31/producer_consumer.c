@@ -13,6 +13,7 @@ void *put(int val)
 {
     buffer[putIndex] = val;
     putIndex = ( putIndex + 1 ) % MAX;
+    return NULL;
 }
 
 int get()
