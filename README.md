@@ -37,6 +37,6 @@ This repository contains my notes when reading the book *Three Easy Pieces*.
   - [30. Condition Variables](part2-concurrency/lecture30/README.md)
   - [31. Semaphores](part2-concurrency/lecture31/README.md)
   - [32. Common Concurrency Problems](part2-concurrency/lecture32/README.md)
-  - [ ] 33. Event-based Concurrency
-  - [ ] 34. Summary Dialogue on Concurrency
+  - [33. Event-based Concurrency](part2-concurrency/lecture33/README.md)
+  - [34. Summary Dialogue on Concurrency](part2-concurrency/lecture34/README.md)
 - [ ] Part III. Persistence
