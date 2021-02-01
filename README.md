@@ -1,3 +1,42 @@
 # ThreeEasyPieces
 This repository contains my notes when reading the book *Three Easy Pieces*.
  
+- [ThreeEasyPieces](#threeeasypieces)
+- Part I. Introduction
+  - [01. A Dialogue on the Book](part0-intro/lecture01/README.md)
+  - [02. Introduction to Operating Systems](part0-intro/lecture02/README.md)
+- Part II. Virtualization
+  - [03. A Dialogue on Virtualization](part1-virtualization/lecture03/README.md)
+  - [04. The Abstraction: The Process](part1-virtualization/lecture04/homework/README.md)
+  - [05. Interlude: Process API](part1-virtualization/lecture05/REAME.md)
+  - [06. Mechanism: Limited Direct Execution](part1-virtualization/lecture06/README.md)
+  - [07. Scheduling: Introduction](part1-virtualization/lecture07/homework/README.md)
+  - [08. Scheduling: The Multi-Level Feedback Priority Queue](part1-virtualization/lecture08/README.md)
+  - [09. Scheduling: Proportional Share](part1-virtualization/lecture09/README.md)
+  - [10. Multiprocessor Scheduling](part1-virtualization/lecture10/README.md)
+  - [11. Summary Dialogue on CPU Virtualization](part1-virtualization/lecture11/README.md)
+  - [12. A Dialogue on Memory Virtualization](part1-virtualization/lecture12/README.md)
+  - [13. The Abstraction: Address Spaces](part1-virtualization/lecture13/README.md)
+  - [14. Interlude: Memory API](part1-virtualization/lecture14/README.md)
+  - [15. Mechanism: Address Translation](part1-virtualization/lecture15/README.md))
+  - [16. Segmentation](part1-virtualization/lecture16/README.md)
+  - [17. Free-Space Management](part1-virtualization/lecture17/README.md)
+  - [18. Paging: Introduction](part1-virtualization/lecture18/README.md)
+  - [19. Paging Faster Translations (TLBs)](part1-virtualization/lecture19/README.md)
+  - [20. Paging: Smaller Tables](part1-virtualization/lecture20/README.md)
+  - [21. Beyond Physical Memory: Mechanisms](part1-virtualization/lecture21/README.md)
+  - [22. Beyond Physical Memory: Policies](part1-virtualization/lecture22/README.md)
+  - [23. Complete Virtual Memory Systems](part1-virtualization/lecture23/README.md)
+  - [24. Summary Dialogue on Memory Virtualization](part1-virtualization/lecture24/README.md)
+- Concurrency
+  - [25. A Dialogue on Concurrency](part2-concurrency/lecture25/README.md)
+  - [26. Concurrency: An Introduction](part2-concurrency/lecture26/README.md)
+  - [27. Interlude: Thread API](part2-concurrency/lecture27/README.md)
+  - [28. Locks](part2-concurrency/lecture28/README.md)
+  - [29. Lock-based Concurrent Data Structures](part2-concurrency/lecture29/README.md)
+  - [30. Condition Variables](part2-concurrency/lecture30/README.md)
+  - [31. Semaphores](part2-concurrency/lecture31/README.md)
+  - [32. Common Concurrency Problems](part2-concurrency/lecture32/README.md)
+  - [ ] 33. Event-based Concurrency
+  - [ ] 34. Summary Dialogue on Concurrency
+- [ ] Part III. Persistence
