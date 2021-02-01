@@ -280,5 +280,118 @@ void put_forks(int p)
 ```
 写出这段代码是很容易，在特定情况下也能正常运行。考虑下面这种*不太巧*的情况，每个线程都在先运行```sem_wait(&forks[left(p)]);```, 由于左侧的叉子都可以被拿起，因此这句话是没问题的，每个线程都可以继续执行。但是，当任何一个线程开始执行```sem_wait(&forks[right(p)])```的时候，问题出现了，每个线程右边的叉子都已经被拿起过了，所以每个线程都休眠等待，陷入死锁。
 
+如果希望解决死锁，一个简单的方法是使其中一个哲学家拿起叉子的顺序与其他不同。下面这段代码综合了两种情况，
+```c++
+// philosopher.c
+#include <stdio.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <semaphore.h>
+#define N 5
+#define MAX_VISITS 3
+
+sem_t forks[N];
+
+int left(int p) { return p; }
+int right(int p ) { return (p+1) % N; }
+
+void get_forks(int p)
+{
+#ifndef DEADLOCK
+    if ( p == 0 )
+    {
+        sem_wait(&forks[left(p)]);
+        sleep(1);
+        sem_wait(&forks[right(p)]);
+    }
+    else
+    {
+#endif
+        sem_wait(&forks[right(p)]);
+        // 这里的sleep可以用来帮忙观察死锁现象
+        sleep(1);
+        sem_wait(&forks[left(p)]);
+#ifndef DEADLOCK
+    }
+#endif
+}
+
+void put_forks(int p)
+{
+    sem_post(&forks[left(p)]);
+    sem_post(&forks[right(p)]);
+}
+
+void *task(void *arg)
+{
+    int me = *( (int *) arg );
+    int count = 0;
+    while ( count < MAX_VISITS )
+    {
+        get_forks(me);
+        printf("(%d) eating for %d-th time\n",me,++count);
+        put_forks(me);
+    }
+    return NULL;
+}
+
+int main(int argc, char const *argv[])
+{
+    for ( int i = 0; i < N; ++i )
+        sem_init(&forks[i],0,1);
+    pthread_t philosophers[N];
+    int tid[N];
+    for ( int i = 0; i < N; ++i )
+        tid[i] = i;
+    for ( int i = 0; i < N; ++i )
+        pthread_create(&philosophers[i],NULL,task,(void*)&tid[i]);
+    for ( int i = 0; i < N; ++i )
+        pthread_join(philosophers[i],NULL);
+    return 0;
+}
+```
+这段代码中用到了一个宏```DEADLOCK```。如果如下编译，则可以看到死锁，
+```bash
+gcc -Wall -pthread -D DEADLOCK -o philosopher.o philosopher.c
+```
+如果不加```-D DEADLOCK```这个flag，那么不会观察到死锁。
+
+## Implementation of Semaphore
+我们可以用条件变量与模拟信号量的实现，其代码如下，
+```c++
+#include <pthread.h>
+typedef struct 
+{
+    int value;
+    pthread_mutex_t mutex;
+    pthread_cond_t cond;
+} sem_t;
+
+sem_init(sem_t *s, int val)
+{
+    s->value = val;
+    pthread_mutex_init(&s->mutex,NULL);
+    pthread_cond_init(&s->cond,NULL);
+}
+
+sem_wait(sem_t *s)
+{
+    pthread_mutex_lock(&s->mutex);
+    while ( s->value <= 0 )
+        pthread_cond_wait(&s->cond,&s->mutex);
+    s->value--;
+    pthread_mutex_unlock(&s->mutex);
+}
+
+sem_post(sem_t *s)
+{
+    pthread_mutex_lock(&s->mutex);
+    s->value++;
+    pthread_cond_signal(&s->cond);
+    pthread_mutex_unlock(&s->mutex);
+}
+```
+当然，semaphore真正的实现并非如此，这里只是模拟。可以想见，实现同样的功能，信号量会比用条件变量方便很多。
+
 
 
