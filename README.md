@@ -1,6 +1,14 @@
 # ThreeEasyPieces
-This repository contains my notes when reading the book *Three Easy Pieces*.
- 
+这个repository是我在阅读*Three Easy Pieces*时的笔记。我主要用汉语书写，以便日后自己可以快速复习，当然，到处可见中英文夹杂的坏习惯。
+
+古人云：书读百遍其义自见。这不过是我的第二遍，很多先前不明白的地方就已经清晰很多了。古人诚不我欺也！我还记得第一次读的时候在进程切换、并发等关键章节基本都是懵的。与上一次不同的是，在这一遍之前我已经读过了CSAPP，尤其是有了一些x86汇编的概念。回头来再看Three Easy Pieces关于进程、进程管理的部分就豁然开朗了。这一遍在并发的部分还是花了不少时间，理解也更加深入了。只不过我的日常代码主要用MPI做并行计算，很少用到并发，因此还需要多找机会练习并发编程。本书最后三节有关于分布式系统的部分，我决定暂时放在一边，日后如需用到再来学习吧。
+
+总得来说，这本书让我受益匪浅。以往在写项目代码的时候，常常会感觉知其然而不知其所以然，这大概是许多没有受过计算机科班训练的理工科人士的通病吧。
+
+本书地址：https://pages.cs.wisc.edu/~remzi/OSTEP/
+
+For myself: 登录[这里](https://gumroad.com/library)下载购买的PDF.
+
 - [ThreeEasyPieces](#threeeasypieces)
 - Part I. Introduction
   - [01. A Dialogue on the Book](part0-intro/lecture01/README.md)
