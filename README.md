@@ -10,10 +10,10 @@
 For myself: 登录[这里](https://gumroad.com/library)下载购买的PDF.
 
 - [ThreeEasyPieces](#threeeasypieces)
-- Part I. Introduction
+- Part 0. Introduction
   - [01. A Dialogue on the Book](part0-intro/lecture01/README.md)
   - [02. Introduction to Operating Systems](part0-intro/lecture02/README.md)
-- Part II. Virtualization
+- Part 1. Virtualization
   - [03. A Dialogue on Virtualization](part1-virtualization/lecture03/README.md)
   - [04. The Abstraction: The Process](part1-virtualization/lecture04/homework/README.md)
   - [05. Interlude: Process API](part1-virtualization/lecture05/REAME.md)
@@ -36,7 +36,7 @@ For myself: 登录[这里](https://gumroad.com/library)下载购买的PDF.
   - [22. Beyond Physical Memory: Policies](part1-virtualization/lecture22/README.md)
   - [23. Complete Virtual Memory Systems](part1-virtualization/lecture23/README.md)
   - [24. Summary Dialogue on Memory Virtualization](part1-virtualization/lecture24/README.md)
-- Concurrency
+- Part 2: Concurrency
   - [25. A Dialogue on Concurrency](part2-concurrency/lecture25/README.md)
   - [26. Concurrency: An Introduction](part2-concurrency/lecture26/README.md)
   - [27. Interlude: Thread API](part2-concurrency/lecture27/README.md)
@@ -47,7 +47,7 @@ For myself: 登录[这里](https://gumroad.com/library)下载购买的PDF.
   - [32. Common Concurrency Problems](part2-concurrency/lecture32/README.md)
   - [33. Event-based Concurrency](part2-concurrency/lecture33/README.md)
   - [34. Summary Dialogue on Concurrency](part2-concurrency/lecture34/README.md)
-- Part III. Persistence
+- Part 3. Persistence
   - [35. A Dialogue on Persistence](part3-persistence/lecture35/README.md)
   - [36. IO Devices](part3-persistence/lecture36/README.md)
   - [37. Hard Disk Devices](part3-persistence/lecture37/README.md)
